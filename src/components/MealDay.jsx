@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/mealDay.css'
 import Header from './Header'
+import SearchMeal from './SearchMeal'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const MealDay = () => {
   const [result, setResult] = useState([])
+  const [searchData, setSearchData] = useState([])
+  const [searchMeal, setSearchMeal] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +23,18 @@ const MealDay = () => {
     }
     fetchData()
   }, [])
+
+  const fetchMeal = async (e) => {
+    e.preventDefault()
+    try {
+      const resp = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal}`
+      )
+      setSearchData(resp.data.meals)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -40,14 +55,29 @@ const MealDay = () => {
           </div>
           <div className="search__block">
             <h2 className="search__text">Find your Meal</h2>
-            <div className="cearch__bar">
+            <div className="search__bar">
               <form>
-                <input type="text"></input>
-                <input type="submit"></input>
+                <input
+                  type="text"
+                  name="search__text"
+                  id="search__text"
+                  value={searchMeal}
+                  onChange={(event) => setSearchMeal(event.target.value)}
+                  placeholder="Find your meal"
+                ></input>
+                <input
+                  type="submit"
+                  onClick={fetchMeal}
+                  value={'search'}
+                  className="search__button"
+                ></input>
               </form>
             </div>
           </div>
         </div>
+        {searchData.map((search, index) => (
+          <SearchMeal search={search} key={searchData[index].idMeal} />
+        ))}
       </div>
     </>
   )

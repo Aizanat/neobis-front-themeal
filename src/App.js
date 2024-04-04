@@ -1,12 +1,15 @@
 import React from 'react'
-import Header from './components/Header'
+import { Routes, Route } from 'react-router-dom'
 import MealDay from './components/MealDay'
 import MealDetails from './components/MealDetails'
 
 function App() {
   return (
     <div className="App">
-      <MealDetails />
+      <Routes>
+        <Route path="/" element={<MealDay />} />
+        <Route path="/details/:id" element={<MealDetails />} />
+      </Routes>
     </div>
   )
 }

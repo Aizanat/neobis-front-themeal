@@ -53,26 +53,26 @@ const MealDay = () => {
           <div className="mealDay__image">
             <img src={result.strMealThumb} alt="mealImage" />
           </div>
-          <div className="search__block">
-            <h2 className="search__text">Find your Meal</h2>
-            <div className="search__bar">
-              <form>
-                <input
-                  type="text"
-                  name="search__text"
-                  id="search__text"
-                  value={searchMeal}
-                  onChange={(event) => setSearchMeal(event.target.value)}
-                  placeholder="Find your meal"
-                ></input>
-                <input
-                  type="submit"
-                  onClick={fetchMeal}
-                  value={'search'}
-                  className="search__button"
-                ></input>
-              </form>
-            </div>
+        </div>
+        <div className="search__block">
+          <h2 className="search__text">Find your Meal</h2>
+          <div className="search__bar">
+            <form>
+              <input
+                type="text"
+                name="search__text"
+                id="search__text"
+                value={searchMeal}
+                onChange={(event) => setSearchMeal(event.target.value)}
+                placeholder="Find your meal"
+              ></input>
+              <input
+                type="submit"
+                onClick={fetchMeal}
+                value={'search'}
+                className="search__button"
+              ></input>
+            </form>
           </div>
         </div>
         {searchData.map((search, index) => (

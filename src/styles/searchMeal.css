@@ -1,0 +1,24 @@
+.mealList {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 3rem;
+  gap: 30px;
+  cursor: pointer;
+}
+.mealList img {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.mealList__info {
+  font-family: var(--raleway);
+}
+.mealList__name {
+  font-size: 1.4rem;
+  color: black;
+}
+.mealList__category {
+  font-size: 1rem;
+  color: black;
+}

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Raleway:wght@200;400;500;600&display=swap');
+
+:root {
+  --cardo: Cardo, serif;
+  --raleway: Raleway, sans-serif;
+}
+
+* {
+  font-size: 10px;
+}
+
+.meal__details {
+  padding: 1rem;
+}
+.mealDetails__info {
+  display: flex;
+  justify-content: space-around;
+  font-family: var(--raleway);
+  gap: 3rem;
+  margin: 6rem 0;
+}
+.mealDetails__text {
+  text-align: center;
+}
+.mealDetails__name {
+  color: #d49726;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--cardo);
+  margin-bottom: 2rem;
+}
+.mealDetails__category {
+  font-size: 1rem;
+  font-family: var(--cardo);
+}
+.mealDetails__ingredients {
+  text-align: start;
+  padding-left: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.mealDetails__ingredients strong {
+  font-family: var(--cardo);
+}
+.mealDetails__ingredients p::before {
+  content: '-';
+  margin-right: 0.5rem;
+}
+.mealDetails__image {
+  text-align: center;
+}
+.mealDetails__image img {
+  width: 70%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: 1rem 1.2rem 2.9rem -1.4rem rgba(0, 0, 0, 0.75);
+}
+.mealDetails-instruction__name {
+  text-align: center;
+  margin-top: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: var(--cardo);
+  font-size: 2rem;
+}
+.mealDetails-instruction__text {
+  font-family: var(--raleway);
+}
+.mealDetails-instruction__video {
+  cursor: pointer;
+  background-color: red;
+  border-radius: 0.6rem;
+  align-items: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-family: var(--raleway);
+  font-weight: 700;
+  font-size: 1rem;
+  height: 4.5rem;
+  width: 20rem;
+  margin: 6rem 0;
+}

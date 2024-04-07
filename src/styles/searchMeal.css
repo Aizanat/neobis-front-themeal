@@ -1,14 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Raleway:wght@200;400;500;600&display=swap');
+
+:root {
+  --cardo: Cardo, serif;
+  --raleway: Raleway, sans-serif;
+}
+
+* {
+  font-size: 10px;
+}
+
 .mealList {
   display: flex;
   align-items: center;
   margin: 1.5rem 3rem;
-  gap: 30px;
+  gap: 3rem;
   cursor: pointer;
 }
 .mealList img {
   align-items: center;
   display: flex;
-  gap: 20px;
+  gap: 2rem;
   margin-bottom: 40px;
 }
 .mealList__info {
